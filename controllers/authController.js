@@ -13,7 +13,7 @@ module.exports = server => {
 
     server.post('/register',async (req,res) => {
         try{
-            const user = await User.create(req.body.header("Content-type:application/json"))
+            const user = await User.create(req.body)
             res.status(200).send(user)
         }catch(err){
             res.send(req.body)
